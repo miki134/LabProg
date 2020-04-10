@@ -17,13 +17,19 @@
 #include "Polygon.h"
 #include "Punkt2.h"
 #include "Matrix.h"
-Punkt2 f(Punkt2 p) { return p; };
+#include "MapPoint.h"
+#include "MapPolygon.h"
+//Punkt2 f(Punkt2 p) { return p; };
 int main()
 {
 	/*TESTY*/
 
 
-	/*Matrix a;
+	/*std::cout << MapPolygon(1, RGBA(23, 123, 12), RGBA(2, 231, 1, 2), 54);
+	MapPoint mp1 = MapPoint();
+
+	MapPoint mp2 = MapPoint(10.0, 20.0, 7, { 255,0,255,255 });
+	Matrix a;
 	a.sizeX = 2;
 	a.sizeY = 2;
 	double **ta = new double*[2];

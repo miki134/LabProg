@@ -68,11 +68,8 @@ Polygon::Polygon(Polygon && p)
 	p.count = 0;
 }
 
-Polygon::~Polygon()
-{
-	if (vertices)
-		delete[] vertices;
-}
+Polygon::~Polygon() = default;
+
 
 void Polygon::setVertices(Punkt2 * vertices, int count)
 {
