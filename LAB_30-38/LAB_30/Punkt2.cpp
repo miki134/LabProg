@@ -1,13 +1,13 @@
 /*! \file Punkt2.cpp
-*
-* \brief Zawiera definicjê klasy Punkt2
-*
-* Plik zawiera implementacjê metod klasy Punkt2.
-*
-* \author Miko³aj Napiera³a
-* \date 2020.03.02
-* \version 1.00.00
-*/
+	*
+	* \brief Zawiera definicjê klasy Punkt2
+	*
+	* Plik zawiera implementacjê metod klasy Punkt2 oraz funkcji zaprzyjaŸnionych.
+	*
+	* \author Miko³aj Napiera³a
+	* \date 2020.04.10
+	* \version 1.00.00
+	*/
 
 #include "Punkt2.h"
 #include <cmath> //math.h

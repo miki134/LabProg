@@ -2,11 +2,10 @@
 	*
 	* \brief Klasa dzia³aj¹ca na tablicy wierzcho³ków z klasy Punkt2
 	*
-	* Deklaracja metod w klasie:
-	* Klasa zmieniaj¹ca wierzcho³ki, ustawiaj¹ca wielkoœæ tablicy, obliczaj¹ca obwód wielok¹ta
+	* Plik zawiera implementacjê metod klasy Polygon, Punkt2 oraz funkcji zaprzyjaŸnionych.
 	*
 	* \author Miko³aj Napiera³a
-	* \date 2020.03.02
+	* \date 2020.04.10
 	* \version 1.00.00
 	*/
 
@@ -176,6 +175,19 @@ Polygon & Polygon::operator=(Polygon & p)
 	return *this;
 }
 
+Polygon & Polygon::operator=(Polygon && p)
+{
+	if (&p != this)
+	{
+		delete[] vertices;
+		count = p.count;
+		vertices = new Punkt2[count];
+		for (unsigned int i = 0; i < p.count; i++)
+			vertices[i] = p.vertices[i];
+	}
+	return *this;
+}
+
 double Polygon::getTriangleArea(Punkt2 &p1, Punkt2 &p2, Punkt2 &p3)
 {
 	double vector_x_1, vector_y_1;
@@ -213,6 +225,16 @@ Punkt2 & Punkt2::operator=(const Punkt2 & p)
 	return *this;
 }
 
+Punkt2& Punkt2::operator=(const Punkt2 &&p)
+{
+	if (&p != this)
+	{
+		x = p.x;
+		y = p.y;
+	}
+	return *this;
+}
+
 Punkt2  operator+(Punkt2 &p1,Punkt2 &p2)
 {
 	return Punkt2(p1.getX() + p2.getX(), p1.getY() + p2.getY());
@@ -228,7 +250,6 @@ std::ostream& operator<< (std::ostream& os, const Polygon& obj)
 	std::string out = "";
 	for (unsigned int i = 0; i < obj.count; i++)
 	{
-
 		out = out + "( " + std::to_string(obj.vertices[i].getX()) + ", " + std::to_string(obj.vertices[i].getY()) + " )\n";
 	}
 	os << out;

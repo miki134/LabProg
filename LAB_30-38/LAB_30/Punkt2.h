@@ -1,15 +1,15 @@
 /*! \file Punkt2.h
-*
-* \brief Zawiera deklaracjê klasy Punkt2
-*
-* Plik zawiera deklaracjê klasy Punkt2.h.
-* Wspó³rzêdne punktu s¹ podawane w uk³adzie kartezjañskim.
-* Klasa zawiera kilka metod skladowych
-*
-* \author Miko³aj Napiera³a
-* \date 2020.03.02
-* \version 1.00.00
-*/
+	*
+	* \brief Zawiera deklaracjê klasy Punkt2
+	*
+	* Plik zawiera deklaracjê klasy Punkt2.h.
+	* Metody publiczne: Podstawowe metody sk³adowe, wspó³rzêdne punktu s¹ podawane w uk³adzie kartezjañskim, operatory:
+	* =(wersja kopiujaca i przypisuj¹ca), <<, +, *, funkcje zaprzyjaŸnione
+	*
+	* \author Miko³aj Napiera³a
+	* \date 2020.04.10
+	* \version 1.00.00
+	*/
 #pragma once
 #include<iostream>
 class Punkt2
@@ -50,8 +50,11 @@ public:
 	Punkt2 operator+(const Punkt2 &p) const;
 	Punkt2 operator-(const Punkt2 &p) const;
 
-	//operaton przypisania
+	//kopiuj¹cy operator przypisania
 	Punkt2 &operator=(const Punkt2 &p);
+
+	//przenosz¹cy operator przypisania
+	Punkt2 &operator=(const Punkt2 &&p);
 
 	// funkcja zaprzyjaŸniona, umo¿liaj¹ca strumieniowanie danych poprzez operator <<
 	friend std::ostream& operator<<(std::ostream& os, const Punkt2& obj);

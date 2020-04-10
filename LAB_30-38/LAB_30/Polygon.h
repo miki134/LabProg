@@ -2,11 +2,13 @@
 	*
 	* \brief Klasa dzia³aj¹ca na tablicy wierzcho³ków z klasy Punkt2
 	*
-	* Klasa zawieraj¹ca metody publiczne: zmieniaj¹ca wierzcho³ki, zmieniaj¹ca wspó³rzêdne danego wierzcho³ka, ustawiaj¹ca wielkoœæ tablicy, obliczaj¹ca obwód wielok¹ta, zwracaj¹ca tablicê wierzcho³ków, obliczaj¹ca pole wypuk³ego wielok¹ta,obliczaj¹ca pole dowolnego wielok¹ta
+	* Klasa zawieraj¹ca metody publiczne: zmieniaj¹ca wierzcho³ki, zmieniaj¹ca wspó³rzêdne danego wierzcho³ka, ustawiaj¹ca wielkoœæ tablicy, 
+	* obliczaj¹ca obwód wielok¹ta, zwracaj¹ca tablicê wierzcho³ków, obliczaj¹ca pole wypuk³ego wielok¹ta,obliczaj¹ca pole dowolnego wielok¹ta, 
+	* zwracaj¹ca wierzcho³ek, prze³adowane operatory: [], = (wersja kopiuj¹ca i przypisuj¹ca), <<
 	* oraz metody prywatne: obliczaj¹ca pole trójk¹ta
 	*
 	* \author Miko³aj Napiera³a
-	* \date 2020.03.02
+	* \date 2020.04.10
 	* \version 1.00.00
 	*/
 #pragma once
@@ -27,8 +29,8 @@ public:
 	//! Konstruktory
 	Polygon();
 	Polygon(std::vector<std::vector<double>>);
-	Polygon(const Polygon &p);
 	Polygon(std::initializer_list<Punkt2>);
+	Polygon(const Polygon &p);
 	Polygon(Polygon &&p);
 
 	//! Destruktor
@@ -77,15 +79,18 @@ public:
 	//! Metoda zwracaj¹ca wierzcho³ek - prze³adowanie operatora indeksowania []
 	Punkt2 &operator[](int i);
 
+	//! Kopiuj¹cy operator przypisania
 	Polygon &operator=(Polygon &p);
 
+	//! Przenosz¹cy operator przypisania
+	Polygon &operator=(Polygon &&p);
 private:
 	//!Metoda oblicza pole trójk¹ta.
 	double getTriangleArea(Punkt2 &p1, Punkt2 &p2, Punkt2 &p3);	
 
 	//funkcja zaprzyjaŸniona, umo¿liaj¹ca strumieniowanie danych poprzez operator <<
-	friend std::ostream& operator<< (std::ostream& os, const Polygon& obj);
+	friend std::ostream& operator<<(std::ostream& os, const Polygon& obj);
 };
 
 //strumieniowanie wartoœci prywatnych klasy Polygon, poprzez operator <<
-std::ostream& operator<< (std::ostream& os, const Polygon& obj);
+std::ostream& operator<<(std::ostream& os, const Polygon& obj);

@@ -4,10 +4,10 @@
 	*
 	* Plik zawiera funkcjê main(),
 	* w której wykonano kilka podstawowych testów
-	* dotycz¹cych klasy Punkt2
+	* dotycz¹cych klas Punkt2, Polygon oraz Matrix
 	*
 	* \author Miko³aj Napiera³a
-	* \date 2020.03.02
+	* \date 2020.04.10
 	* \version 1.00.00
 	*/
 #include <iostream>
@@ -16,11 +16,39 @@
 
 #include "Polygon.h"
 #include "Punkt2.h"
+#include "Matrix.h"
 Punkt2 f(Punkt2 p) { return p; };
 int main()
 {
 	/*TESTY*/
 
+
+	/*Matrix a;
+	a.sizeX = 2;
+	a.sizeY = 2;
+	double **ta = new double*[2];
+	for (int i = 0; i<2; i++)
+	{
+		ta[i] = new double[2];
+		for (int y = 0; y < 2; y++)
+		{
+			ta[i][y] = 12;
+		}
+	}
+	a.tab = ta;
+	double *abc = a[1];
+	std::cout << abc[2];
+	std::cout << a(1, 1);
+	
+	std::initializer_list<Punkt2> list = { Punkt2(1,2),Punkt2(0,0),Punkt2(3,12) };
+	std::initializer_list<Punkt2> test = { Punkt2(123,32),Punkt2(43,45),Punkt2(345,4532) };
+
+	Polygon abc =  Polygon(list);
+	abc = Polygon(test);
+	std::cout << list;
+
+	Punkt2 p1 = Punkt2(1.0, 2.0);// zwyk³y konstruktor
+	p1 = Punkt2(100.0, 200.0);
 	Punkt2 a;
 	Punkt2 p1 = Punkt2(1.0, 2.0);
 
@@ -36,7 +64,7 @@ int main()
 
 	std::cout << p1 << p2 << p3 << p4 << p5 << p6;
 
-	/*std::vector <std::vector<double>> coords = { {0.0,0.0}, {1.0,0.0}, {1.0,1.0}, {800,1.0} };
+	std::vector <std::vector<double>> coords = { {0.0,0.0}, {1.0,0.0}, {1.0,1.0}, {800,1.0} };
 
 	Polygon kwadrat = Polygon(coords);
 	Punkt2 w1 = kwadrat[2];
