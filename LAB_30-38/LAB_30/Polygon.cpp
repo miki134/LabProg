@@ -19,6 +19,11 @@
 
 unsigned int Polygon::number = 0;
 
+Polygon::Polygon()
+{
+	number++;
+}
+
 Polygon::Polygon(std::vector<std::vector<double>> vertices)
 {
 	count = vertices.size();
@@ -51,6 +56,23 @@ Polygon::Polygon(std::initializer_list<Punkt2> list)
 		this->vertices[i] = y;
 		i++;
 	}
+	number++;
+}
+
+Polygon::Polygon(Polygon && p)
+{
+	count = p.count;
+	vertices = p.vertices;
+	number++;
+
+	p.vertices = nullptr;
+	p.count = 0;
+}
+
+Polygon::~Polygon()
+{
+	if (vertices)
+		delete[] vertices;
 }
 
 void Polygon::setVertices(Punkt2 * vertices, int count)
@@ -148,7 +170,7 @@ Polygon & Polygon::operator=(Polygon & p)
 		delete[] vertices;
 		count = p.count;
 		vertices = new Punkt2[count];
-		for (int i = 0; i < p.count; i++)
+		for (unsigned int i = 0; i < p.count; i++)
 			vertices[i] = p.vertices[i];
 	}
 	return *this;
@@ -171,14 +193,14 @@ double Polygon::getTriangleArea(Punkt2 &p1, Punkt2 &p2, Punkt2 &p3)
 	return d/2;
 }
 
-Punkt2 Punkt2::operator+( Punkt2 &p) const
+Punkt2 Punkt2::operator+(const Punkt2 &p) const
 {
-	return Punkt2(x + p.getX(), y + p.getY());
+	return Punkt2(x + p.x, y + p.y);
 }
 
-Punkt2 Punkt2::operator-(Punkt2 &p) const
+Punkt2 Punkt2::operator-(const Punkt2 &p) const
 {
-	return Punkt2(x - p.getX(), y - p.getY());
+	return Punkt2(x - p.x, y - p.y);
 }
 
 Punkt2 & Punkt2::operator=(const Punkt2 & p)

@@ -23,9 +23,10 @@ public:
 	static unsigned int number;
 
 	//Konstruktory
-	Punkt2() = default;
+	Punkt2();
 	Punkt2(double, double);
 	Punkt2(const Punkt2 &p);
+	Punkt2(Punkt2 &&p);
 
 	//Destruktor domyœlny
 	~Punkt2() = default;
@@ -46,8 +47,8 @@ public:
 	double getDistance(Punkt2  _p);
 
 	// operatory dodawania i odejmowania
-	Punkt2 operator+(Punkt2 &p) const;
-	Punkt2 operator-(Punkt2 &p) const;
+	Punkt2 operator+(const Punkt2 &p) const;
+	Punkt2 operator-(const Punkt2 &p) const;
 
 	//operaton przypisania
 	Punkt2 &operator=(const Punkt2 &p);

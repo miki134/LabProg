@@ -17,11 +17,18 @@
 
 unsigned int Punkt2::number = 0;
 
+Punkt2::Punkt2()
+{
+	number++;
+	std::cout << "Uruchomiono konstruktor domyslny" << std::endl;
+}
+
 Punkt2::Punkt2(double x, double y)
 {
 	this->x = x;
 	this->y = y;
 	number++;
+	std::cout << "Uruchomiono konstruktor: (" << x << ", " << y << ")" << std::endl;
 }
 
 Punkt2::Punkt2(const Punkt2 &p)
@@ -29,6 +36,18 @@ Punkt2::Punkt2(const Punkt2 &p)
 	x = p.x;
 	y = p.y;
 	number++;
+	std::cout << "Uruchomiono konstruktor kopiujacy" << std::endl;
+}
+
+Punkt2::Punkt2(Punkt2 &&p)
+{
+	x = p.x;
+	y = p.y;
+	number++;
+
+	p.x = NULL;
+	p.y = NULL;
+	std::cout << "Uruchomiono konstruktor przenoszacy" << std::endl;
 }
 
 void Punkt2::setX(double x)

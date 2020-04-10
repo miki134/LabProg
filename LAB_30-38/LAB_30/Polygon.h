@@ -25,13 +25,14 @@ public:
 	static unsigned int number; /*< Iloœæ wywo³añ konstruktora*/
 
 	//! Konstruktory
-	Polygon() = default;
+	Polygon();
 	Polygon(std::vector<std::vector<double>>);
 	Polygon(const Polygon &p);
 	Polygon(std::initializer_list<Punkt2>);
+	Polygon(Polygon &&p);
 
 	//! Destruktor
-	~Polygon()=default;
+	~Polygon();
 
 	//! Metoda konstruuj¹ca tablicê wierzcho³ków.
 	/*!
@@ -82,7 +83,7 @@ private:
 	//!Metoda oblicza pole trójk¹ta.
 	double getTriangleArea(Punkt2 &p1, Punkt2 &p2, Punkt2 &p3);	
 
-	// funkcja zaprzyjaŸniona, umo¿liaj¹ca strumieniowanie danych poprzez operator <<
+	//funkcja zaprzyjaŸniona, umo¿liaj¹ca strumieniowanie danych poprzez operator <<
 	friend std::ostream& operator<< (std::ostream& os, const Polygon& obj);
 };
 

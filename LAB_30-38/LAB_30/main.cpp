@@ -16,13 +16,25 @@
 
 #include "Polygon.h"
 #include "Punkt2.h"
-
+Punkt2 f(Punkt2 p) { return p; };
 int main()
 {
 	/*TESTY*/
 
+	Punkt2 a;
+	Punkt2 p1 = Punkt2(1.0, 2.0);
 
+	Punkt2 p2 = p1;
 
+	Punkt2 p3 = p1 + p2;
+
+	Punkt2 p4 = Punkt2(1000, 2000) + Punkt2(3000, 4000);
+
+	Punkt2 p5 = f(Punkt2(10, 20));
+
+	Punkt2 p6 = f(Punkt2(100, 200) + Punkt2(100, 200));
+
+	std::cout << p1 << p2 << p3 << p4 << p5 << p6;
 
 	/*std::vector <std::vector<double>> coords = { {0.0,0.0}, {1.0,0.0}, {1.0,1.0}, {800,1.0} };
 
@@ -51,14 +63,12 @@ int main()
 	b = a;
 	std::cout << b;
 	Punkt2 a(2,3);
-	
 	Punkt2 w1 = Punkt2(10.0, 20.0);
 	Punkt2 w2 = Punkt2(50.0, 120.0);
-	Punkt2 w3 = w1 + w2;
+	Punkt2 w3 = Punkt2(10.0, 20.0) + Punkt2(50.0, 120.0);
 	Punkt2 w4 = w1 * w2;
-
-	int count = 4;
-
+	std::cout << w3;
+	
 	Punkt2 *punkty = new Punkt2[count];
 	//Punkt2 punkty[4];
 	/*punkt 0 = (0,0)
