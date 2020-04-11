@@ -1,3 +1,11 @@
+/*! \file MapPoint.cpp
+	*
+	* \brief Zawiera implementacje klasy MapPoint
+	*
+	* \author Miko³aj Napiera³a
+	* \date 2020.04.12
+	* \version 1.00.00
+	*/
 #include "MapPoint.h"
 #include "Punkt2.h"
 
@@ -6,7 +14,7 @@ MapPoint::MapPoint()
 	MapPoint( 0, 0, 0, { 0,0,0,255 } )
 {}
 
-MapPoint::MapPoint(double x, double y, int radius, RGBA color)
+MapPoint::MapPoint(double x, double y, unsigned int radius, RGBA color)
 	:
 	Punkt2(x, y),
 	visRadius{ radius },
@@ -28,7 +36,17 @@ MapPoint::MapPoint(const MapPoint&& mp) :
 MapPoint::~MapPoint()
 {}
 
-MapPoint& MapPoint::operator=(const MapPoint& mp)
+MapPoint::operator unsigned int()
+{
+	return visRadius;
+}
+
+MapPoint::operator RGBA()
+{
+	return visColor;
+}
+
+MapPoint& MapPoint::operator=(MapPoint& mp)
 {
 	if (this != &mp)
 	{
@@ -52,7 +70,7 @@ MapPoint& MapPoint::operator=(MapPoint&& mp)
 	return *this;
 }
 
-void MapPoint::setVisRadius(int r)
+void MapPoint::setVisRadius(unsigned int r)
 {
 	visRadius = r;
 }

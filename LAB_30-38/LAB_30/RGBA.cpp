@@ -1,3 +1,11 @@
+/*! \file RGBA.cpp
+	*
+	* \brief Zawiera implementacje klasy RGBA
+	*
+	* \author Miko³aj Napiera³a
+	* \date 2020.04.12
+	* \version 1.00.00
+	*/
 #include"RGBA.h"
 
 void RGBA::setR(unsigned char r)
@@ -61,6 +69,33 @@ RGBA::RGBA(unsigned char r, unsigned char g, unsigned char b, unsigned char a)
 	this->a = a;
 }
 
+RGBA::RGBA(const RGBA & p)
+{
+	r = p.r;
+	g = p.g;
+	b = p.g;
+	a = p.a;
+}
+
+RGBA::RGBA(const RGBA && p)
+	:
+	r{ p.r },
+	g{ p.g },
+	b{ p.g },
+	a{ p.a }
+{}
+
+RGBA & RGBA::operator=(const RGBA & p)
+{
+	if (this != &p)
+	{
+		r = p.r;
+		g = p.g;
+		b = p.b;
+		a = p.a;
+	}
+	return *this;
+}
 
 std::ostream& operator<<(std::ostream& os, const RGBA& obj)
 {

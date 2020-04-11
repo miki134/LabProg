@@ -1,7 +1,15 @@
+/*! \file MapPolygon.h
+	*
+	* \brief Klasa MapPolygon
+	*
+	* \author Miko³aj Napiera³a
+	* \date 2020.04.12
+	* \version 1.00.00
+	*/
 #include"Polygon.h"
 #include "RGBA.h"
 #pragma once
-class MapPolygon : Polygon
+class MapPolygon : public Polygon
 {
 	unsigned int borderWidth;
 	RGBA borderColor;
@@ -13,12 +21,13 @@ public:
 	MapPolygon();
 	MapPolygon(unsigned int bW, RGBA bC, RGBA f);
 	MapPolygon(unsigned int bW, RGBA bC, RGBA f, unsigned char o);
+	MapPolygon(unsigned int bW, RGBA bC, RGBA f, unsigned char o, std::initializer_list<Punkt2> list);
 	MapPolygon(const MapPolygon &p);
 	MapPolygon(MapPolygon &&p);
 
 	//destruktory
 	~MapPolygon() = default;
-
+	
 	//settery
 	void setBorderWidth(unsigned int b);
 	void setBorderColor(RGBA b);
@@ -30,6 +39,12 @@ public:
 	RGBA getBorderColor();
 	RGBA getFillColor();
 	unsigned char getOpacity();
+
+	// kopiuj¹cy operator przypisania
+	MapPolygon &operator=(MapPolygon &p);
+
+	// przenosz¹cy operator przypisania
+	MapPolygon &operator=(MapPolygon &&p);
 
 	//operator<<
 	friend std::ostream &operator<<(std::ostream& os, const MapPolygon& obj);

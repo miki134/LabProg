@@ -3,11 +3,10 @@
 	* \brief Kod programu testuj¹cego klasê Punkt2
 	*
 	* Plik zawiera funkcjê main(),
-	* w której wykonano kilka podstawowych testów
-	* dotycz¹cych klas Punkt2, Polygon oraz Matrix
+	* w której wykonano kilka podstawowych testów klas
 	*
 	* \author Miko³aj Napiera³a
-	* \date 2020.04.10
+	* \date 2020.04.12
 	* \version 1.00.00
 	*/
 #include <iostream>
@@ -19,17 +18,56 @@
 #include "Matrix.h"
 #include "MapPoint.h"
 #include "MapPolygon.h"
+#include "Map.h"
 //Punkt2 f(Punkt2 p) { return p; };
 int main()
 {
 	/*TESTY*/
 
 
-	/*std::cout << MapPolygon(1, RGBA(23, 123, 12), RGBA(2, 231, 1, 2), 54);
+
+	/*MapPolygonD *c = new MapPolygonD{ MapPolygon(23, { 231,2,23,1 }, { 3,1,2,5 }, 243), "ABC" };
+
+	MapPolygon t{ 23,{231,32,1,5},{5,4,2,1},6 };
+
+	std::initializer_list<Punkt2> k = { {2,4}, {32,23} };
+
+	Polygon{ k };
+
+	std::cout << Polygon();
+
+	MapBrokenD *b = new MapBrokenD{ MapBroken(12, { 23, 12,5,3 }), "XYZ" };
+	MapPoint *f = new MapPoint{ 2,2,5,{34,23,52,2} };
+	
+	std::cout << Map(c, 1,b, 1,f, 1);
+
+	MapPolygon a;
+	MapPolygon p(23, { 231,2,23,1 }, { 3,1,2,5 }, 243);
+
+	std::cout << p;
+
+	/*std::vector <std::vector<double>> coords = { {0.0,0.0}, {1.0,0.0}, {1.0,1.0}, {800,1.0} };
+	Polygon a = coords;
+
+	std::cout << MapPolygon(1, RGBA(23, 123, 12), RGBA(2, 231, 1, 2), 54);
 	MapPoint mp1 = MapPoint();
 
+	std::initializer_list<Punkt2> list = { Punkt2(1,2),Punkt2(0,0),Punkt2(3,12) };
+	MapPolygon a = MapPolygon(2, { 255,0,255,255 }, { 255,0,255,255 }, 50, list);
+
+	std::cout << a << std::endl;
+
+	MapPoint a(23, 23, 10, { 230,23,1,255 });
+
+	std::cout << a << std::endl;
+
 	MapPoint mp2 = MapPoint(10.0, 20.0, 7, { 255,0,255,255 });
-	Matrix a;
+	unsigned int a = static_cast<unsigned int>(mp2);
+	std::cout << a << std::endl;
+
+	RGBA b = mp2;
+	std::cout << b << std::endl;
+	/*Matrix a;
 	a.sizeX = 2;
 	a.sizeY = 2;
 	double **ta = new double*[2];

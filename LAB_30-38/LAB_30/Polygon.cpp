@@ -5,7 +5,7 @@
 	* Plik zawiera implementacjê metod klasy Polygon, Punkt2 oraz funkcji zaprzyjaŸnionych.
 	*
 	* \author Miko³aj Napiera³a
-	* \date 2020.04.10
+	* \date 2020.04.12
 	* \version 1.00.00
 	*/
 
@@ -19,6 +19,8 @@
 unsigned int Polygon::number = 0;
 
 Polygon::Polygon()
+	:
+	Polygon({Punkt2(0,0)})
 {
 	number++;
 }
@@ -31,16 +33,6 @@ Polygon::Polygon(std::vector<std::vector<double>> vertices)
 	for (unsigned int i = 0; i < count; i++)
 	{
 		this->vertices[i] = Punkt2(vertices[i][0], vertices[i][1]);
-	}
-	number++;
-}
-
-Polygon::Polygon(const Polygon &p)
-{
-	count = p.count;
-	for (unsigned int i = 0;i < count;i++)
-	{
-		vertices[i] = p.vertices[i];
 	}
 	number++;
 }
@@ -58,10 +50,27 @@ Polygon::Polygon(std::initializer_list<Punkt2> list)
 	number++;
 }
 
+Polygon::Polygon(const Polygon &p)
+{
+	count = p.count;
+	vertices = new Punkt2[count];
+	for (unsigned int i = 0;i < count;i++)
+	{
+		vertices[i] = p.vertices[i];
+	}
+	number++;
+}
+
+
+
 Polygon::Polygon(Polygon && p)
 {
 	count = p.count;
-	vertices = p.vertices;
+	vertices = new Punkt2[count];
+	for (unsigned int i = 0; i < count; i++)
+	{
+		vertices[i] = p.vertices[i];
+	}
 	number++;
 
 	p.vertices = nullptr;
@@ -69,6 +78,16 @@ Polygon::Polygon(Polygon && p)
 }
 
 Polygon::~Polygon() = default;
+
+Polygon::operator unsigned int()
+{
+	return count;
+}
+
+Polygon::operator Punkt2()
+{
+	return *vertices;
+}
 
 
 void Polygon::setVertices(Punkt2 * vertices, int count)
@@ -159,20 +178,20 @@ Punkt2 & Polygon::operator[](int i)
 	return vertices[i];
 }
 
-Polygon & Polygon::operator=(Polygon & p)
+Polygon & Polygon::operator=(const Polygon & p)
 {
 	if (&p != this)
 	{
 		delete[] vertices;
 		count = p.count;
 		vertices = new Punkt2[count];
-		for (unsigned int i = 0; i < p.count; i++)
+		for (unsigned int i = 0; i < count; i++)
 			vertices[i] = p.vertices[i];
 	}
 	return *this;
 }
 
-Polygon & Polygon::operator=(Polygon && p)
+Polygon & Polygon::operator=(const Polygon && p)
 {
 	if (&p != this)
 	{
@@ -200,46 +219,6 @@ double Polygon::getTriangleArea(Punkt2 &p1, Punkt2 &p2, Punkt2 &p3)
 	double d;
 	d = abs((vector_x_1*vector_y_2) - (vector_y_1*vector_x_2));
 	return d/2;
-}
-
-Punkt2 Punkt2::operator+(const Punkt2 &p) const
-{
-	return Punkt2(x + p.x, y + p.y);
-}
-
-Punkt2 Punkt2::operator-(const Punkt2 &p) const
-{
-	return Punkt2(x - p.x, y - p.y);
-}
-
-Punkt2 & Punkt2::operator=(const Punkt2 & p)
-{
-	if (&p != this)
-	{
-		x = p.x;
-		y = p.y;
-	}
-	return *this;
-}
-
-Punkt2& Punkt2::operator=(const Punkt2 &&p)
-{
-	if (&p != this)
-	{
-		x = p.x;
-		y = p.y;
-	}
-	return *this;
-}
-
-Punkt2  operator+(Punkt2 &p1,Punkt2 &p2)
-{
-	return Punkt2(p1.getX() + p2.getX(), p1.getY() + p2.getY());
-}
-
-Punkt2 operator*(Punkt2 &p1, Punkt2 &p2)
-{
-	return Punkt2(p1.getX() * p2.getX(), p1.getY() * p2.getY());
 }
 
 std::ostream& operator<< (std::ostream& os, const Polygon& obj)

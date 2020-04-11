@@ -8,7 +8,7 @@
 	* oraz metody prywatne: obliczaj¹ca pole trójk¹ta
 	*
 	* \author Miko³aj Napiera³a
-	* \date 2020.04.10
+	* \date 2020.04.12
 	* \version 1.00.00
 	*/
 #pragma once
@@ -35,6 +35,10 @@ public:
 
 	//! Destruktor
 	~Polygon();
+
+	//funkcje konwertuj¹ce na typ unsigned int oraz Punkt2
+	explicit operator unsigned int();
+	operator Punkt2();
 
 	//! Metoda konstruuj¹ca tablicê wierzcho³ków.
 	/*!
@@ -80,10 +84,10 @@ public:
 	Punkt2 &operator[](int i);
 
 	//! Kopiuj¹cy operator przypisania
-	Polygon &operator=(Polygon &p);
+	Polygon &operator=(const Polygon &p);
 
 	//! Przenosz¹cy operator przypisania
-	Polygon &operator=(Polygon &&p);
+	Polygon &operator=(const Polygon &&p);
 private:
 	//!Metoda oblicza pole trójk¹ta.
 	double getTriangleArea(Punkt2 &p1, Punkt2 &p2, Punkt2 &p3);	

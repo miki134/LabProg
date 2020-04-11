@@ -7,7 +7,7 @@
 	* =(wersja kopiujaca i przypisuj¹ca), <<, +, *, funkcje zaprzyjaŸnione
 	*
 	* \author Miko³aj Napiera³a
-	* \date 2020.04.10
+	* \date 2020.04.12
 	* \version 1.00.00
 	*/
 #pragma once
@@ -51,7 +51,7 @@ public:
 	Punkt2 operator-(const Punkt2 &p) const;
 
 	//kopiuj¹cy operator przypisania
-	Punkt2 &operator=(const Punkt2 &p);
+	Punkt2 &operator=(Punkt2 &p);
 
 	//przenosz¹cy operator przypisania
 	Punkt2 &operator=(const Punkt2 &&p);
