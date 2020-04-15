@@ -5,7 +5,7 @@
 	* Plik zawiera implementacjê metod klasy Punkt2 oraz funkcji zaprzyjaŸnionych.
 	*
 	* \author Miko³aj Napiera³a
-	* \date 2020.04.12
+	* \date 2020.04.15
 	* \version 1.00.00
 	*/
 
@@ -52,6 +52,8 @@ Punkt2::Punkt2(Punkt2 &&p)
 	std::cout << "Uruchomiono konstruktor przenoszacy" << std::endl;
 	number++;
 }
+
+Punkt2::~Punkt2() = default;
 
 void Punkt2::setX(double x)
 {

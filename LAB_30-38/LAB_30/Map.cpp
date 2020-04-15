@@ -3,7 +3,7 @@
 	* \brief Zawiera implementacje klasy Map
 	*
 	* \author Miko³aj Napiera³a
-	* \date 2020.04.12
+	* \date 2020.04.15
 	* \version 1.00.00
 	*/
 #include "Map.h"
@@ -61,29 +61,33 @@ Map::Map(const Map & p)
 
 Map::Map(Map && p)
 {
-	
+	polygons = p.polygons;
 	countPolygons = p.countPolygons;
-	polygons = new MapPolygonD[countPolygons];
-	for (unsigned int i = 0; i < countPolygons; i++)
-		polygons[i] = p.polygons[i];
 
 	countBroken = p.countBroken;
-	broken = new MapBrokenD[countBroken];
-	for (unsigned int i = 0; i < countBroken; i++)
-		broken[i] = p.broken[i];
+	broken = p.broken;
 
 	countPoints = p.countPoints;
-	points = new MapPoint[countPoints];
-	for (unsigned int i = 0; i < countPoints; i++)
-		points[i] = p.points[i];
-	
+	points = p.points;
+
+	countPolygons = 0;
+	countBroken = 0;
+	countPoints = 0;
+	polygons = nullptr;
+	broken = nullptr;
+	points = nullptr;
 }
 
 Map::~Map()
 {
-	delete[] polygons;
-	delete[] broken;
-	delete[] points;
+	if(polygons)
+		delete[] polygons;
+
+	if(broken)
+		delete[] broken;
+	
+	if(points)
+		delete[] points;
 }
 
 void Map::setPolygons(MapPolygonD *p, unsigned int c)

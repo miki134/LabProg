@@ -6,7 +6,7 @@
 	* w której wykonano kilka podstawowych testów klas
 	*
 	* \author Miko³aj Napiera³a
-	* \date 2020.04.12
+	* \date 2020.04.15
 	* \version 1.00.00
 	*/
 #include <iostream>
@@ -24,9 +24,13 @@ int main()
 {
 	/*TESTY*/
 
+	/*std::initializer_list<Punkt2> k = { {2,4}, {32,23} };
 
+	auto a = Polygon(k);
 
-	/*MapPolygonD *c = new MapPolygonD{ MapPolygon(23, { 231,2,23,1 }, { 3,1,2,5 }, 243), "ABC" };
+	std::cout << a;
+
+	MapPolygonD *c = new MapPolygonD{ MapPolygon(23, { 231,2,23,1 }, { 3,1,2,5 }, 243), "ABC" };
 
 	MapPolygon t{ 23,{231,32,1,5},{5,4,2,1},6 };
 

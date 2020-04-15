@@ -3,7 +3,7 @@
 	* \brief Zawiera implementacje klasy RGBA
 	*
 	* \author Miko³aj Napiera³a
-	* \date 2020.04.12
+	* \date 2020.04.15
 	* \version 1.00.00
 	*/
 #include"RGBA.h"
@@ -70,12 +70,12 @@ RGBA::RGBA(unsigned char r, unsigned char g, unsigned char b, unsigned char a)
 }
 
 RGBA::RGBA(const RGBA & p)
-{
-	r = p.r;
-	g = p.g;
-	b = p.g;
-	a = p.a;
-}
+:
+r{ p.r },
+g{ p.g },
+b{ p.g },
+a{ p.a }
+{}
 
 RGBA::RGBA(const RGBA && p)
 	:
@@ -84,6 +84,7 @@ RGBA::RGBA(const RGBA && p)
 	b{ p.g },
 	a{ p.a }
 {}
+
 
 RGBA & RGBA::operator=(const RGBA & p)
 {

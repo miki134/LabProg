@@ -7,7 +7,7 @@
 	* =(wersja kopiujaca i przypisuj¹ca), <<, +, *, funkcje zaprzyjaŸnione
 	*
 	* \author Miko³aj Napiera³a
-	* \date 2020.04.12
+	* \date 2020.04.15
 	* \version 1.00.00
 	*/
 #pragma once
@@ -29,7 +29,7 @@ public:
 	Punkt2(Punkt2 &&p);
 
 	//Destruktor domyœlny
-	~Punkt2() = default;
+	~Punkt2();
 
 	//settery
 	void setX(double);

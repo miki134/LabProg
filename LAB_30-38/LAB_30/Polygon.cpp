@@ -5,7 +5,7 @@
 	* Plik zawiera implementacjê metod klasy Polygon, Punkt2 oraz funkcji zaprzyjaŸnionych.
 	*
 	* \author Miko³aj Napiera³a
-	* \date 2020.04.12
+	* \date 2020.04.15
 	* \version 1.00.00
 	*/
 
@@ -20,10 +20,9 @@ unsigned int Polygon::number = 0;
 
 Polygon::Polygon()
 	:
-	Polygon({Punkt2(0,0)})
-{
-	number++;
-}
+	vertices{nullptr},
+	count{0}
+{}
 
 Polygon::Polygon(std::vector<std::vector<double>> vertices)
 {
@@ -63,21 +62,23 @@ Polygon::Polygon(const Polygon &p)
 
 
 
-Polygon::Polygon(Polygon && p)
+Polygon::Polygon(Polygon&& p)
 {
 	count = p.count;
-	vertices = new Punkt2[count];
-	for (unsigned int i = 0; i < count; i++)
-	{
-		vertices[i] = p.vertices[i];
-	}
-	number++;
+	vertices = p.vertices;
 
 	p.vertices = nullptr;
 	p.count = 0;
+
+	std::cout << "Konstruktor przenosz¹cy\n";
 }
 
-Polygon::~Polygon() = default;
+Polygon::~Polygon()
+{
+	if (vertices)
+		delete[] vertices;
+	--number;
+}
 
 Polygon::operator unsigned int()
 {
@@ -191,15 +192,16 @@ Polygon & Polygon::operator=(const Polygon & p)
 	return *this;
 }
 
-Polygon & Polygon::operator=(const Polygon && p)
+Polygon& Polygon::operator=(Polygon&& obj)
 {
-	if (&p != this)
+	if (&obj != this)
 	{
 		delete[] vertices;
-		count = p.count;
-		vertices = new Punkt2[count];
-		for (unsigned int i = 0; i < p.count; i++)
-			vertices[i] = p.vertices[i];
+		vertices = obj.vertices;
+		count = obj.count;
+
+		obj.count = 0;
+		obj.vertices = nullptr;
 	}
 	return *this;
 }
@@ -223,11 +225,7 @@ double Polygon::getTriangleArea(Punkt2 &p1, Punkt2 &p2, Punkt2 &p3)
 
 std::ostream& operator<< (std::ostream& os, const Polygon& obj)
 {
-	std::string out = "";
 	for (unsigned int i = 0; i < obj.count; i++)
-	{
-		out = out + "( " + std::to_string(obj.vertices[i].getX()) + ", " + std::to_string(obj.vertices[i].getY()) + " )\n";
-	}
-	os << out;
+		os << obj.vertices[i] << std::endl;
 	return os;
 }

@@ -8,7 +8,7 @@
 	* oraz metody prywatne: obliczaj¹ca pole trójk¹ta
 	*
 	* \author Miko³aj Napiera³a
-	* \date 2020.04.12
+	* \date 2020.04.15
 	* \version 1.00.00
 	*/
 #pragma once
@@ -87,7 +87,7 @@ public:
 	Polygon &operator=(const Polygon &p);
 
 	//! Przenosz¹cy operator przypisania
-	Polygon &operator=(const Polygon &&p);
+	Polygon &operator=(Polygon &&p);
 private:
 	//!Metoda oblicza pole trójk¹ta.
 	double getTriangleArea(Punkt2 &p1, Punkt2 &p2, Punkt2 &p3);	
