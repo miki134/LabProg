@@ -1,0 +1,36 @@
+	//obliczanie dlugosci pierwszych dwoch bokow
+	//	u1_y_1=pow((x-x, 2) = 0
+	//	u2_y_1=pow((y+1)-y, 2) = 1
+	//	u3_y_1=pow((T[x][y+1]-T[x][y]), 2)
+	//	dlugosc_y_1 = sqrt(u1_y_1+u2_y_1+u3_y_1)
+
+	//	u1_x_1=pow((x-1)-x,2) = 1
+	//	u2_x_1=pow(y-y,2) = 0
+	//	u3_x_1=pow(T[x+1][y]-T[x][y],2)
+	//	dlugosc_x_1 = sqrt(u1_x_1+u2_x_1+u3_x_1)
+
+	//obliczanie przekatnej kwadratu
+	//	u1_przek=((x+1)-x,2) = 1
+	//	u2_przek=((y+1)-y,2) = 1
+	//	u3_przek=(T[x+1][y]-T[x][y+1], 2)
+	//	dlugosc_przek=sqrt(u1_przek+u2_przek+u3_przek)
+
+	//obliczanie pola trójk¹ta
+	//	p_1=(dlugosc_y_1+dlugosc_x_1+dlugosc_przek)/2
+	//	pole_1=	sqrt(p_1*(p_1-dlugosc_y_1)*(p_1-dlugosc_x_1)*(p_1-dlugosc_przek))
+
+
+	//obliczanie dlogosci pozostalych dwoch
+	//	u1_y_2= pow(((x+1)-(x+1),2) = 0
+	//	u2_y_2= pow((y+1)-y,2) = 1
+	//	u3_y_2=pow((T[x+1][y+1]-T[x+1][y],2)
+	//	dlugosc_y_2=sqrt(u1_y_2+u2_y_2+u3_y_2)
+
+	//	u1_x_2=pow((x+1)-x,2) = 1
+	//	u2_x_2=pow((y+1)-(y+1),2) = 0
+	//	u3_x_2=pow(T[x+1][y+1]-T[x][y+1],2)
+	//	dlugosc_x_2=(u1_x_3+u2_x_2+u3_x_2)
+
+	//obliczanie pola 2 trójk¹ta
+	//	p_2=(dlugosc_y_2+dlugosc_x_2+dlugosc_przek)/2
+	//	pole_2=	sqrt(p_2*(p_1-dlugosc_y_2)*(p_2-dlugosc_x_2)*(p_2-dlugosc_przek))

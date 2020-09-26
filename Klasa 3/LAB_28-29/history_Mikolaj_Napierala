@@ -1,0 +1,636 @@
+git clone https://github.com/h5bp/html5-boilerplate.git
+ git shortlog -s -n| wc -l
+dir
+cd html5-boilerplate/
+git shortlog -s -n| wc -l
+find . -type f -print | grep -v -E '/\.git/' |wc -l
+git log -2
+git log --author="Roba Larsena"
+git log --author="Roba Larsena"
+git log --author="Rob Larsena"
+git log --author="Rob Larsen"
+git log --author="Rob Larsen" --before="2018-3-2"
+git log --author="Rob Larsen" --after="2018-3-2"
+git show number
+git show numer
+git show numer 36c8988392777cd3c2c6718bfa1114c79b344601
+git show --numer 36c8988392777cd3c2c6718bfa1114c79b344601
+git giggqqgiy
+cd c:\git
+cd Lekcja/
+history
+git show /?
+git /?
+git --help
+git show --help
+git log --author="Rob Larsen" --before="2018-3-2"
+dir
+cd html5-boilerplate/
+git log --author="Rob Larsen" --before="2018-3-2"
+git show 7db4ba338d96836ebe4f40798d00ab9961215647
+gitk
+history
+cd ~
+cp .bash_history history_Mikolaj_Napierala
+dir
+dir -AH
+pwd
+ls -al
+exit
+history
+history -d
+history -y
+history --help
+gitk
+git gui
+dir
+cd test/
+dir
+cd ..
+rm CHANGELOG.md 
+dir
+rm dist/ LICENSE.txt package.json README.md test/ gulpfile.babel.js modernizr-config.json package-lock.json src/
+dir
+ls -al
+rm --help
+ls
+del dist/ src/ test/
+del /?
+del --help
+rd --help
+dir
+rm -f dist/
+rm /?
+rm --help
+rm -i dist/
+ls 
+ls -al
+ls -al
+git reset --hard
+git log -2
+git reset --hard a3e73
+git log
+git gui
+git guiq
+git gui
+mkdir kat1
+ls -al
+cd ..
+mkdir Cw5
+mkdir kat1
+cd kat1/
+rm kat1
+rd kat1
+rmdir kat1
+rm kat1
+cd ..
+rm kat1
+rd kat1
+rmdir kat1
+mkdir kat1
+rd kat1
+rm kat1
+rmdir kat1
+ls
+cd Cw5/
+ls
+mkdir kat1
+git commit -m "Pierwsza rewizja: utworzenie kat1"
+git add -A
+cd ..
+git init .
+cd Cw5/
+cd ..
+git add -A
+git commit -m "Pierwsza rewizja: utworzenie kat1"
+cd ..
+cd Lekcja/
+sl
+ls
+cd Cw5/
+mkdir kat2
+cd .
+cd ..
+git status
+git add -A
+git commit -m "Druga rewizja: utworzenie kat2
+q
+git commit -m "Druga rewizja: utworzenie kat2
+q"
+git commit -m "Druga rewizja: utworzenie kat2"
+git status
+git add -A
+git commit -m "Trzecia rewizja:modyfikacja plików: abc.txt, abdc.txt oraz usunięcie pliku asde.txt"
+git log
+git log -3
+git log -2
+git log -1
+git reset --hard 2f23
+git log
+git reset --hard 
+git reset --hard 2f23
+cd ~
+cp .bash_history history_Mikolaj_Napierala
+gzip history_Mikolaj_Napierala 
+exit
+git status
+cd c:\git
+cd Private/
+git status
+cd ..
+md cw6
+mkdir cw6
+cd cw6/
+git init .
+mkdir config
+cd config/
+git status - s
+git status
+touch > user.cfg
+touch --help
+cat > user.cfg
+cd ..
+cat config.ini
+cat > config.ini
+git status -s
+git status -s
+cat config.ini > .gitignore
+git status -s
+cat config.ini > .gitignore
+cat .gitignore
+cat  > .gitignore
+git status -s
+touch .gitignore
+cat .gitignore
+git add -A
+git commit -m "...
+git commit -m "..."
+git status -s
+history
+mkdir cw7
+cd cw7/
+git init .
+touch README
+ls
+git add -A
+git commit -m "README"
+cat > db.ini
+cat > db.ini.dist
+cat >.gitignore
+cat .gitignore 
+ls
+cat > .gitignore
+cat .gitignore
+ls
+cat > .gitignore
+ls
+cat > .gitignore
+ls
+cat > .gitignore
+ls -al
+ls
+cat .gitignore
+git add  -A
+git add -A
+git commit -m "Ignore files"
+git status -s
+git status
+ls
+cat db.ini
+cat > db.ini
+cat db.ini
+cat >db.ini
+cat db.ini
+cat >db.ini
+cat db,ini
+cat db.ini
+history
+history
+cd ~
+cat .bash_history 
+exit
+history
+cd c:\git
+cls
+ls
+cd Lekcja/
+ls
+cd ...
+cd .
+cd ..
+ls
+cd cw 6
+cd cw6
+ls
+cd ..
+cd Lekcja/
+cd Cw5/
+ls
+git log --graph
+git branch branch_1
+git bramch branch_2
+git branch branch_2
+git log --graph
+git branch -d branch_2
+git branch -d branch_1
+git status
+git status -s
+git log
+ls
+cd kat2
+cat > a.txt
+git status
+git add -A
+cd ..
+git commit -m ""
+git log
+git log --graph
+git status
+git commit -m "Added a.txt"
+git log
+git branch branch_1
+git branch branch_2
+git status
+ls
+cd kat1
+ls
+cat > b.txt
+cd ..
+git branch
+git add -A
+git commit -m "Rewizja 5"
+git chechout branch_1
+git checkout branch_1
+ls
+cd kat1
+cat > c.txt
+git branch
+git status
+git add -A
+git commit -m "Rewizja 6"
+git chceckout branch_2
+git checkout branch_2
+cat >d.txt
+git status
+git status -s
+git add -A
+git commit -m "Rewizja 7"
+git checkout master
+git log --grapk
+git log --graph
+gitk
+git branch
+git log
+git checkout branch_1
+git log
+git checkout master
+git log
+git checkout 2f349
+cd ~
+git cp .bash_history history_mikolaj_napierala
+cp .bash_history history_mikolaj_napierala
+exit
+cd c:\git
+ls
+cd Lekcja/
+cd cw5
+ls
+git status
+git log --graph
+git log --all --graph
+git log --all --graph --oneline
+git checkout --help
+git checkout 2f239e1
+git log --all --graph --oneline
+ls
+cd kat1
+ls
+ls -al
+cd ..
+cd kat2
+ls
+cat >> abc.txt
+git status
+git add -A
+git commit -m "abc.txt was modified"
+git checkout -b branch_3
+git checkout -b branch_3 2f239e1
+git log
+git log --all --graph --oneline
+gitk
+gitk --all
+cd ~
+cp .bash_history history_mikolaj_napierala
+exit
+cd c:\git
+cd Lekcja/
+ls
+cd..
+cd ..
+ls
+mkdir cw8
+cd  mkdir
+cd cw8
+cat > plik1.txt
+cat > plik2.txt
+ls
+git init .
+git add -A
+git commit -m "Text files: plik1, plik2"
+gitk
+ls
+cat >> plik.txt
+ls
+rm plik.txt
+ls
+cat >> plik1.txt
+ls
+touch plik1.txt
+cat plik1.txt
+cat > plik1.txt
+touch plik1
+touch plik1.txt
+cat plik1.txt
+cat >> plik1.txt
+cat plik1
+cat plik1.txt
+cat >> plik1.txt
+cat plik1.txt
+rm plik.txt
+rm plik1.txt
+cat > plik1.txt
+cat plik1
+cat plik1.txt
+cat >> plik2.txt
+cat plik2.txt
+gitk
+git add -A
+gitk
+git commit -m "Added first simple line"
+gitk
+git log --oneline --graph
+exit
+history
+cd:\git
+ls
+cd c:\git
+history
+ls
+cd cw8
+git branch
+git branch branch_1
+git branch branch_2
+gitk
+git checkout branch_1
+ls
+rm plik1
+ls
+cat plik1.txt
+cat >> plik1.txt
+cat plik1.txt
+gitk
+git add -A
+git commit -m "Second text line in first file, On branch_1"
+gitk
+git log --all --graph
+git checkout branch_2
+ls
+rm plik1
+git checkout master
+ls
+git chceckout branch_2
+git checkout branch_2
+git checkout branch_1
+git checkout branch_2
+ls
+rm plik1
+cat plik2.txt
+cat >> plik2.txt
+cat plik2.txt
+git status
+git add -A
+git commit -m "Second text line in second file, on branch_2"
+git checkout matser
+git checkout master
+gitk
+gitk -all
+gitk -A
+gitk --help
+gitk
+git log --all --graph
+git gui
+git merge --help
+git merge branch_1
+git merge branch_2
+git branch
+gitk
+git log --all --graph
+git gui
+cat plik1.txt
+cat plik2.txt
+git log --all --graph
+git checkout 3c91bd
+git log --all --graph
+git checkout 8d6632
+git log --all --graph
+git checkout 3c91bd
+git checkout 6eaf66
+git commit --amend
+git log --graph
+git log --graph --all
+git commit --amend
+git log --all --graph --oneline
+git gui
+git checkout branch_1
+git log --all --oneline --graph
+git merge master
+git checkout branch_2
+git merge master
+git log --all --graph --oneline
+gitk
+git checkout master
+git log --all --oneline --graph
+cat plik1.txt
+cat plik2.txt
+git commit --amend
+git log --all --oneline --graph
+git checkout branch_1
+git log
+git commit --amend
+git log --all --oneline --graph
+git checkout a1fe34
+git checkout a1fe456
+git log --all --graph --oneline
+git reset --hard 6eaf663
+git log --all --graph --oneline
+git reset --hard 6eaf663
+git checkout -f 6eaf663
+gitk
+git log --all --graph --oneline
+git checkout master
+git log --all --graph --oneline
+cat plik1.txt
+git checkout 231b
+git log --all --graph --oneline
+git log --all --graph --oneline
+git checkout 231b720
+git checkout -f 231b720
+git reset --hard 231b720
+git checkout a1fe456
+git log --oneline
+git log --all --graph --oneline
+history
+cat plik1.txt
+cat plik2.txt
+git log --oneline --all -graph
+git log --oneline --all --graph
+git branch
+git checkout branch_1
+git branch
+git log --oneline --all --graph
+cat plik1.txt
+cat plik2.txt
+git checkot master
+git reset --hard 
+git checkot master
+git log --oneline --all --graph
+git checkout master
+cat plik1.txt
+cat plik2.txt
+git checkout branch_2
+cat plik1.txt
+cat plik2.txt
+git git checkout a1fe
+git checkout a1fe
+cat plik1.txt
+cat plik2.txt
+git log --oneline --all --graph
+git checkout branch_1
+git log --oneline --all --graph
+cat >> plik1.txt
+cat plik1.txt
+cat >> plik2.txt
+ca plik2.txt
+cat plik2.txt
+cat plik1txt
+cat plik1.txt
+cat plik2.txt
+git status
+git add -a
+git add -A
+git commit -m "Dodane dwie rozne linie teksu w pliku 1 i 2"
+git log --all --graph --all
+gitk
+git checkout branch_2
+cat plik2.txt
+cat plik1.txt
+cat >> plik1.txt
+cat >> plik2.txt
+git status
+git add -A
+git commit -m "Zmodyfikowane dwa pliki"
+git checkout master
+git log --all --graph --oneline
+git merge branch_1 bramch_2
+git checkout branch_1
+git merge branch_2
+git checkout master
+git status
+git merge branch_1
+git add -A
+git merge branch_1
+git log --all --graph --oneline
+git status
+cat plik1.txt
+rm plik1.txt
+git status
+git merge branch_2
+git add -A
+git commit
+git merge branch_2
+git log --all --graph --oneline
+git checkout master
+git merge branch_1
+cat plik1.txt
+ls
+cat plik2.txt
+history
+exit
+history
+cd c:\git
+ls
+cd repo_1
+git branch
+ls
+cd..
+cd ..
+cd repo_1_kopia/
+ls
+git log --all --graph --oneline
+cd ..
+cd repo_1
+git remote 
+git remote -v
+git remote --help
+git remote show
+git remote
+git remote add kopia repo_1-kopia
+git remote
+git remote del kopia
+git remote rm kopia
+git remoe
+git remote
+git remote add kopia repo_1_kopia
+git remote -v
+cd ..
+cd repo_1
+cd ..
+cd repo_1_kopia/
+git remote -v
+cd ..
+cd repo_1
+git checkout master
+git fetch kopia master
+git remote -v
+git remote rm kopia
+git remote add kopia C:\GIT\repo_1_kopia
+git remote -v
+git remote rm kopia
+git remote add kopia C:/GIT/repo_1_kopia
+git remote
+git remote -v
+git fetch kopia mastre
+git fetch kopia master
+git remote -v
+git log --oneline --all
+git merge kopia/master
+git log --oneline --all
+git log --oneline --all --graph
+git config --help
+ls
+cat plik3.txt
+cat >> plik3.txt
+git status
+git add -A
+git commit -m "Add informations in plik3.txt"
+git push kopia master
+git push kopia master:master
+git status
+cd ..
+cd  repo_1_kopia/
+git status
+ls
+cat plik3.txt
+git remote
+git remote -v
+git pull origin master
+ls
+git log
+git status
+git add -A
+git status
+git merge origin/master
+ls
+cat plik3.txt
+history
+exit

@@ -1,0 +1,1 @@
+#include "CzastkaZlozona.h"
