@@ -8,14 +8,15 @@
     <?php
     //wersja php
     echo PHP_VERSION;
+    echo "<br>";
     //echo phpinfo();
     //interpolacja
-
-    //$x = $x << 3;
-    echo "$x<>br";
+    $x = 15;
+    $x = $x << 3;
+    echo "$x<br>";
 
     $x = $x >> 2;
-    echo "$x<>br";
+    echo "$x<br>";
 
     //porównanie
     $x=-10;
