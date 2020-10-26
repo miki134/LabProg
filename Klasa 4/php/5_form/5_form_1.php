@@ -7,7 +7,7 @@
 </head>
 <body>
     <h4>Formularz - wprowadzanie danych</h4>
-    <form action="./5_form/5_form_data.php" method="get">
+    <form action="./5_form_data_1.php" method="get">
     <input type="text" name="name" placeholder="Imię"><br><br>
     <input type="text" name="surname" placeholder="Nazwisko"><br><br>
     <input type="radio" name="color" value="r">Czerwony<br><br>
