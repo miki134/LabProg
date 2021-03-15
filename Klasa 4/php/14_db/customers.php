@@ -9,7 +9,7 @@
 <body>
     <h3>Klienci</h3>
     <?php
-    $connect = @new mysqli("localhost", "root", "1", "zsk");
+    require_once './connect.php';
     // print_r($connect);
     if(!$connect->connect_errno){
         $sql = "SELECT * FROM `customers`";
@@ -19,18 +19,34 @@
         //print_r($customer);
         //echo $customer['name'];
 
+        echo <<<TABLE
+        <table>
+                <tr>
+                    <th>Id</th>
+                    <th>Imię</th>
+                    <th>Nazwisko</th>
+                </tr>
+TABLE;
+
         while ($customer = $result->fetch_assoc()) {
             //print_r($customer);
             //echo '<br>';
-
+            //Imię i nazwisko: $customer[name] $customer[surname]<br>
+            //Data urodzenia: $customer[birthday]
+            //<hr>
             echo <<<CUSTOMER
-            Imię i nazwisko: $customer[name] $customer[surname]<br>
-            Data urodzenia: $customer[birthday]
-            <hr>
+            <tr>
+                <td>$customer[id]</td>
+                <td>$customer[name]</td>
+                <td>$customer[surname]</td>
+                <td><a href="./delete.php?id=$customer[id]">Usuń</a></td>
+            </tr> 
 CUSTOMER;
+        echo "</table>";
         }
         $connect->close();
-    }else{
+    }
+    else{
         echo "Błędne połączenie z bazą danych. <br> Error number:",
         $connect->connect_errno, '<br> Error ',$connect->connect->connect_error;
     }
